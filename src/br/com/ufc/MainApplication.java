@@ -9,12 +9,13 @@ import java.time.Instant;
 public class MainApplication {
 
     public static void main(String[] args) {
+        /* m = Matrix */
 
         /* Example of multiplication m.Parallel */
-        //Order of line and column = A(2, 2) ... B(2, 2)
+        /* Order of line and column = A(2, 2) ... B(2, 2) */
         MatrixMultiplicationParallel matrixMultiplicationParallel = new MatrixMultiplicationParallel(2, 2, 3, 4);
 
-        /* ---- Calculation factor of matrix elements ---- */
+        /* ---- Calculation factor of matrix elements (OPTIONAL) ---- */
         matrixMultiplicationParallel.setFactorMatrixA(10);
         matrixMultiplicationParallel.setFactorMatrixB(20);
 
@@ -24,15 +25,17 @@ public class MainApplication {
         Instant finishMP = Instant.now();
 
         /* --- Print m.A, m.B, m.Resulting --- */
-        //matrixMultiplicationParallel.print();
+        matrixMultiplicationParallel.print();
 
         /* --- Time of execution Parallel --- */
         System.out.println("Parallel - Time to perform multiplication: " + Duration.between(startMP, finishMP).toMillis() + " ms");
 
 
         /* Example of multiplication m.Serial */
+        /* Order of line and column = A(2, 2) ... B(2, 2) */
         MatrixMultiplicationSerial matrixMultiplicationSerial = new MatrixMultiplicationSerial(2, 2, 3, 4);
-        /* ---- Calculation factor of matrix elements ---- */
+
+        /* ---- Calculation factor of matrix elements (OPTIONAL) ---- */
         matrixMultiplicationSerial.setFactorMatrixA(10);
         matrixMultiplicationSerial.setFactorMatrixB(20);
 
@@ -42,7 +45,7 @@ public class MainApplication {
         long finishMS = System.currentTimeMillis();
 
         /* --- Print m.A, m.B, m.Resulting --- */
-        //matrixMultiplicationSerial.print();
+        matrixMultiplicationSerial.print();
 
         /* --- Time of execution Serial --- */
         System.out.println("Serial - Time to perform multiplication: " + (finishMS - startMS) + " ms");

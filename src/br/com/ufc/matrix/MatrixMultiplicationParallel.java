@@ -43,7 +43,7 @@ public class MatrixMultiplicationParallel {
         matrixA = Util.generateRandomMatrix(factorMatrixA != 0 ? factorMatrixA : 100, lineA, columnA);
         matrixB = Util.generateRandomMatrix(factorMatrixB != 0 ? factorMatrixB : 200, lineB, columnB);
 
-        /* creates (line * column) Worker threads. Each thread Calculates a Matrix Value and sets it to matrixResulting */
+        /* creates (lineA * columnB) Worker threads. Each thread Calculates a Matrix Value and sets it to matrixResulting */
         for (int i = 0; i < lineA; i++){
             for (int j = 0; j < columnB; j++){
                 threads[i][j] = new WorkerThread(i, j, matrixA, matrixB, matrixResulting);
